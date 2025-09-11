@@ -1,0 +1,3 @@
+rootProject.name = 'b2bridge'
+include 'user-module', 'product-module', 'order-module'
+
