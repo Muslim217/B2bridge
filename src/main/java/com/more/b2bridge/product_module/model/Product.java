@@ -14,7 +14,8 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 public class Product {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private User sellerId;
