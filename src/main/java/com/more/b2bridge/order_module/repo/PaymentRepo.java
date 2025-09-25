@@ -1,6 +1,7 @@
 package com.more.b2bridge.order_module.repo;
 
+import com.more.b2bridge.order_module.model.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PaymentRepo extends JpaRepository<PaymentRepo, Long> {
+public interface PaymentRepo extends JpaRepository<Payment, Long> {
 }

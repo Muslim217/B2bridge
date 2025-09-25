@@ -1,22 +1,21 @@
 package com.more.b2bridge.product_module.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.more.b2bridge.user_module.model.User;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.catalina.User;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Setter
 @Getter
+@Entity
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
     private User sellerId;
 
     private String name;

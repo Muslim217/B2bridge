@@ -1,10 +1,7 @@
 package com.more.b2bridge.user_module.model;
 
 import com.more.b2bridge.user_module.enumeration.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Setter;
 import lombok.Getter;
 
@@ -12,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Setter
 @Getter
+@Table(name= "Customer")
 @Entity
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
