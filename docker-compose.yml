@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: doc-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: B2Bridge
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d B2Bridge"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
