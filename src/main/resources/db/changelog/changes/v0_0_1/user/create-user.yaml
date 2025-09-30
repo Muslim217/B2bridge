@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: passwordHash
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "role IN ('CUSTOMER', 'SELLER', 'ADMIN')"
+              - column:
+                  name: firstName
+                  type: varchar(100)
+              - column:
+                  name: lastName
+                  type: varchar(100)
+              - column:
+                  name: phone
+                  type: varchar(30)
+              - column:
+                  name: registrationDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: isActive
+                  type: boolean

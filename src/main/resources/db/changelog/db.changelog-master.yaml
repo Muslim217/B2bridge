@@ -1,2 +1,19 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-
+  - include:
+      file: db/changelog/changes/v0_0_1/user/create-user.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/product/create-category.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/product/change-category.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/product/create-product.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/product/create-review.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/order/create-payment.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/order/create-order.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/order/create-orderItem.yaml
+  - include:
+      file: db/changelog/changes/v0_0_1/notification/create-notification.yaml

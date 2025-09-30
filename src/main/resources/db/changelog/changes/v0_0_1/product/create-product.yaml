@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-product
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: sellerId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_product_user
+                    references: user(id)
+              - column:
+                  name: categoryId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_product_category
+                    references: category(id)
+              - column:
+                  name: name
+                  type: varchar(50)
+              - column:
+                  name: description
+                  type: varchar(1000)
+              - column:
+                  name: price
+                  type: decimal(10, 2)
+              - column:
+                  name: stockQuantity
+                  type: int
+              - column:
+                  name: minOrderQuantity
+                  type: int
+              - column:
+                  name: minStockThreshold
+                  type: int
+              - column:
+                  name: imageUrl
+                  type: varchar(100)
+              - column:
+                  name: createDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: updateDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: isActive
+                  type: boolean

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-orderItem
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: order_item
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: orderId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_orderItem_order
+                    references: order(id)
+              - column:
+                  name: productId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_orderItem_product
+                    references: product(id)
+              - column:
+                  name: quantity
+                  type: int
+              - column:
+                  name: pricePerUnit
+                  type: decimal(10, 2)
+              - column:
+                  name: totalPrice
+                  type: decimal(10, 2)
