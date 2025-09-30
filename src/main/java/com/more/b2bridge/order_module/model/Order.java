@@ -15,10 +15,10 @@ import java.time.LocalDateTime;
 public class Order {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private long customerId;
     private LocalDateTime orderDate;
     private Status status;
     private BigDecimal totalAmount;
     private long paymentId;
+
 }
