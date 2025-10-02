@@ -12,12 +12,12 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 public class Product {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     @ManyToOne
     private User sellerId;
-
     private String name;
     private String description;
     private long categoryId;
@@ -29,4 +29,6 @@ public class Product {
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
     private boolean isActive;
+
+
 }

@@ -19,13 +19,11 @@ public class Notification {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private long userId;
     private Type type;
     private String message;
     private Status status;
     private LocalDateTime createDate;
-
     @Nullable
     private LocalDateTime readDate;
 }

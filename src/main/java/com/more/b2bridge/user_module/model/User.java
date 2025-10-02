@@ -12,14 +12,13 @@ import java.time.LocalDateTime;
 @Table(name= "Customer")
 @Entity
 public class User {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String username;
     private String email;
     private String passwordHash;
     private Role role;
-
     private String firstName;
     private String lastName;
     private int phone;

@@ -15,6 +15,5 @@ public class CreateNotificationDto {
     private String message;
     private Status status;
     private LocalDateTime createDate;
-
     private LocalDateTime readDate;
 }

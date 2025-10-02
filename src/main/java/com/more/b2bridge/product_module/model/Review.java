@@ -13,10 +13,9 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 public class Review {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private long productId;
     private long customerId;
     private int rating;
