@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-notification
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: notification
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: userId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_notification_user
+                    references: user(id)
+              - column:
+                  name: type
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "status IN ('CUSTOMER', 'SELLER', 'ADMIN')"
+              - column:
+                  name: message
+                  type: varchar(500)
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "status IN ('CREATED', 'PAID', 'SHIPPED', 'DELIVERED', 'CANCELED')"
+              - column:
+                  name: createDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: readDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP

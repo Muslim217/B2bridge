@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-review
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: review
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: productId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_review_product
+                    references: product(id)
+              - column:
+                  name: customerId
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_review_user
+                    references: user(id)
+              - column:
+                  name: rating
+                  type: int
+              - column:
+                  name: comment
+                  type: varchar(1000)
+              - column:
+                  name: reviewDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
