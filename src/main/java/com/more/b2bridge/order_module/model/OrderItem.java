@@ -2,24 +2,24 @@ package com.more.b2bridge.order_module.model;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Table(name = "order_items")
 public class OrderItem {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    private long orderId;
-    private long productId;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    private Long productId;
     private int quantity;
     private BigDecimal pricePerUnit;
     private BigDecimal totalPrice;
-
 }
