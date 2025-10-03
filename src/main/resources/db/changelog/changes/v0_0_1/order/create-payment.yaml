@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-payment
+      author: Rashid
+      changes:
+        - createTable:
+            tableName: payment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: paymentMethod
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "status IN ('CREDIT_CARD', 'PAYPAL', 'BANK_TRANSFER')"
+              - column:
+                  name: paymentDate
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: amount
+                  type: decimal(10, 2)
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "role IN ('CREATED', 'PAID', 'SHIPPED', 'DELIVERED', 'CANCELED')"

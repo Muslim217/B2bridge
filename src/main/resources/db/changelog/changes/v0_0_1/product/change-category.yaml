@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-parent-category-fk
+      author: Rashid
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: category
+            baseColumnNames: parentCategoryId
+            constraintName: fk_category-parent
+            referencedTableName: category
+            referencedColumnNames: id

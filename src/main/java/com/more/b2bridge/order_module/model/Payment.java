@@ -20,7 +20,6 @@ public class Payment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long orderId;
     private PaymentMethod paymentMethod;
     private LocalDateTime paymentDate;
     private BigDecimal amount;
