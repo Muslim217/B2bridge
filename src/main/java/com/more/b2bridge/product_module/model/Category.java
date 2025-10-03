@@ -14,10 +14,8 @@ import org.springframework.lang.Nullable;
 public class Category {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String name;
     private String description;
-
     @Nullable
     private long parentCategoryId;
 }
