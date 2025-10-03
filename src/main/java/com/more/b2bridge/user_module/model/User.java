@@ -22,7 +22,7 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private int phone;
+    private String phone;
     private LocalDateTime registrationDate;
 
     private boolean isActive;

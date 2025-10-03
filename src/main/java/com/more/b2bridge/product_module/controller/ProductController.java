@@ -27,7 +27,7 @@ public class ProductController {
         service.deleteProduct(productId);
     }
 
-    @PostMapping
+    @PutMapping
     public void updateProduct(@RequestBody Product product) {
         service.updateProduct(product);
     }
