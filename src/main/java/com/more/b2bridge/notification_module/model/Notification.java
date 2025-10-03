@@ -11,6 +11,7 @@ import lombok.Setter;
 import com.more.b2bridge.notification_module.enumeration.Type;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Setter
 @Getter
